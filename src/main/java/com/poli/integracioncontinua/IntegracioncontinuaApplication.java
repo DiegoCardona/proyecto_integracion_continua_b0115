@@ -21,7 +21,7 @@ public class IntegracioncontinuaApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         redisService.set("key", "poligran");
         String value = redisService.get("key");
-        System.out.println("Valor obtenido desde la base de datos de redis: " + value);
+        System.out.println("Valor obtenido desde la base de datos de redisService: " + value);
     }
 
 }
