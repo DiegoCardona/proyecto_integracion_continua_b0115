@@ -20,7 +20,8 @@ public class IntegracioncontinuaApplication {
 
     public String getRedisValue() {
         redisService.set("key", "poligran");
-        redisValue = redisService.get("key");
-        return redisValue;
+        String value = redisService.get("key"); 
+        System.out.println("Valor obtenido desde la base de datos de redisService: " + value);
+        return value;
     }
 }
