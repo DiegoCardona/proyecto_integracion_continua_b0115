@@ -13,6 +13,6 @@ public class HealthController {
 
     @GetMapping("/health")
     public String getHealth() {
-        return "Valor obtenido desde la base de datos de redis: " + app.getRedisValue();
+        return "Valor obtenido desde la base de datos y desplegado con jenkins de redis: " + app.getRedisValue();
     }
 }
