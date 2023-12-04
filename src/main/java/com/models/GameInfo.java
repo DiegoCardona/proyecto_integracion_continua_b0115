@@ -1,11 +1,14 @@
 package com.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class GameInfo {
     private String name;
     private Double rating;
+    @JsonProperty("background_image")
     private String backgroundImage;
     private String description;
-    
+
     public String getName() {
         return name;
     }

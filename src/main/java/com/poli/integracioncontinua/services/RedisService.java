@@ -1,20 +1,9 @@
 package com.poli.integracioncontinua.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Service;
+public interface RedisService {
 
-@Service
-public class RedisService {
+    void set(String key, String value);
 
-    @Autowired
-    private StringRedisTemplate redisTemplate;
+    String get(String key);
 
-    public void set(String key, String value) {
-        redisTemplate.opsForValue().set(key, value);
-    }
-
-    public String get(String key) {
-        return redisTemplate.opsForValue().get(key);
-    }
 }

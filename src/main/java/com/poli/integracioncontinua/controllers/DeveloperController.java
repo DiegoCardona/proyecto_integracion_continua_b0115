@@ -22,8 +22,8 @@ public class DeveloperController {
     private RedisService redisService;
 
     @GetMapping("/developer/{name}")
-    public Mono<DeveloperInfo> getDeveloperInfo(@PathVariable String name) {
-        String cachedData = redisService.get(name);
+    public Mono<DeveloperInfo> getDeveloperInfo(@PathVariable final String name) {
+        final String cachedData = redisService.get(name);
         if (cachedData != null) {
             return Mono.just(new Gson().fromJson(cachedData, DeveloperInfo.class));
         } else {
