@@ -12,8 +12,6 @@ public class IntegracioncontinuaApplication {
     @Autowired
     private RedisService redisService;
 
-    private String redisValue;
-
     public static void main(String[] args) {
         SpringApplication.run(IntegracioncontinuaApplication.class, args);
     }
@@ -24,4 +22,4 @@ public class IntegracioncontinuaApplication {
         System.out.println("Valor obtenido desde la base de datos de redisService: " + value);
         return value;
     }
-}
+}  
