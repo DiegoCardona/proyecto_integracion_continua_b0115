@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      environment:
+      - RAWG_API_KEY=${RAWG_API_KEY}
     container_name: java-app
     networks:
       - app-network
