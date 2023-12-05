@@ -1,0 +1,33 @@
+language: java
+jdk: 
+  - openjdk17
+
+services:
+  - docker
+
+env:
+  global:
+    - RAWG_API_KEY=your_api_key_here
+
+before_install:
+  - echo "Environment setup"
+
+install:
+  - echo "Start building the application"
+  - docker-compose up -d --build
+
+after_success:
+  - echo "Build succeeded, handling successful build tasks"
+
+after_failure:
+  - echo "Build failed, handling failure"
+
+before_deploy:
+  - echo "Preparing deploy"
+
+after_deploy:
+  - echo "Post-deployment steps"
+
+after_script:
+  - echo "Cleaning up"
+  - docker-compose down
